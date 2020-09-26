@@ -1,7 +1,10 @@
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <functional>
 
 using std::string;
 using std::cout;
@@ -14,6 +17,7 @@ struct studentas {
     string pavarde;
     int egz;
     int paz[5];
+    float med;
     float galutinis = 0;
 };
 
@@ -21,6 +25,7 @@ int main() {
     int a = 0;
     vector <studentas> grupe;
     studentas laikina;
+    vector <int> pazymiai;
     cout << "Sveiki !\n ";
     cout << "Iveskite studentu skaiciu: ";
     cin >> a;
@@ -41,16 +46,21 @@ int main() {
             }
             else {
                 laikina.galutinis = laikina.galutinis + (float)laikina.paz[j];
+                pazymiai.push_back(laikina.paz[j]);
             }
+           
+            std::nth_element(pazymiai.begin(), pazymiai.begin() + pazymiai.size() / 2, pazymiai.end());
+            laikina.med = pazymiai[pazymiai.size() / 2];
+           //cout << "The median is " << pazymiai[pazymiai.size() / 2] << '\n';
         }
         laikina.galutinis = laikina.galutinis / 5;
         laikina.galutinis = laikina.galutinis * 0.4 + 0.6 * laikina.egz;
 
         grupe.push_back(laikina);
     }
-    cout << "Pavarde\t\t" << "Vardas\t\t" << "Galutinis(Vid.)" << endl;
+    cout << "Pavarde\t\t" << "Vardas\t\t" << "Galutinis(Vid.)\t" << "Galutinis(Med.)" <<endl;
     cout << "------------------------------------------------------------------------\n";
     for (auto& tt : grupe)
-        cout << tt.vardas << "\t\t" << tt.pavarde << "\t\t" << tt.galutinis << endl;
+        cout << tt.vardas << "\t\t" << tt.pavarde << "\t\t" << std::fixed << std::setprecision(2) << tt.galutinis << "\t" << tt.med << endl;
     grupe.clear();
 }
