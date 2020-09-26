@@ -16,12 +16,13 @@ struct studentas {
     string vardas;
     string pavarde;
     int egz;
-    int paz[5];
+    int paz[15];
     float med;
     float galutinis = 0;
 };
 
 int main() {
+    int m = 0;
     int a = 0;
     vector <studentas> grupe;
     studentas laikina;
@@ -30,6 +31,16 @@ int main() {
     cout << "Iveskite studentu skaiciu: ";
     cin >> a;
     grupe.reserve(a);
+    cout << "Kiek pazymiu noresite ivesti (maksimalus galimas ivedimas - 15 pazymiu)?\n";
+
+    // patikrina ar norima ivesti ne maziau 0 ir ne daugiau  kaip 15 pazymiu
+    while (true) {
+        cin >> m;
+        if (m < 1 or 15 < m) {  
+            cout << "KLAIDA! negalimas veiksmas\n";
+        }
+        else {break;}
+    }
     for (int i = 0; i < a; i++) {
         cout << "Iveskite " << i + 1 << "-ojo studento varda: ";
         cin >> laikina.vardas;
@@ -37,7 +48,7 @@ int main() {
         cin >> laikina.pavarde;
         cout << "Iveskite " << i + 1 << "-ojo studento egzamino rezultata: ";
         cin >> laikina.egz;
-        for (int j = 0; j < 5; j++) {
+        for (int j = 0; j < m; j++) {
             cout << "Iveskite " << j + 1 << "-aji pazymi :\n";
             cin >> laikina.paz[j];
             if (laikina.paz[j] < 0 or laikina.paz[j] > 10) {
@@ -51,9 +62,8 @@ int main() {
            
             std::nth_element(pazymiai.begin(), pazymiai.begin() + pazymiai.size() / 2, pazymiai.end());
             laikina.med = pazymiai[pazymiai.size() / 2];
-           //cout << "The median is " << pazymiai[pazymiai.size() / 2] << '\n';
         }
-        laikina.galutinis = laikina.galutinis / 5;
+        laikina.galutinis = laikina.galutinis / m;
         laikina.galutinis = laikina.galutinis * 0.4 + 0.6 * laikina.egz;
 
         grupe.push_back(laikina);
@@ -61,6 +71,6 @@ int main() {
     cout << "Pavarde\t\t" << "Vardas\t\t" << "Galutinis(Vid.)\t" << "Galutinis(Med.)" <<endl;
     cout << "------------------------------------------------------------------------\n";
     for (auto& tt : grupe)
-        cout << tt.vardas << "\t\t" << tt.pavarde << "\t\t" << std::fixed << std::setprecision(2) << tt.galutinis << "\t" << tt.med << endl;
+        cout << tt.vardas << "\t\t" << tt.pavarde << "\t\t" << std::fixed << std::setprecision(2) << tt.galutinis << "\t\t" << tt.med << endl;
     grupe.clear();
 }
