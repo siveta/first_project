@@ -51,6 +51,7 @@ int main() {
         for (int j = 0; j < m; j++) {
             cout << "Iveskite " << j + 1 << "-aji pazymi :\n";
             cin >> laikina.paz[j];
+            // patikrina ar ivestas pazymys yra  10-baleje sistemoje
             if (laikina.paz[j] < 0 or laikina.paz[j] > 10) {
                 cout << "Klaida! Iveskite pazymius dar karta:\n";
                 j = j - 1;
@@ -59,7 +60,7 @@ int main() {
                 laikina.galutinis = laikina.galutinis + (float)laikina.paz[j];
                 pazymiai.push_back(laikina.paz[j]);
             }
-           
+           // mediana
             std::nth_element(pazymiai.begin(), pazymiai.begin() + pazymiai.size() / 2, pazymiai.end());
             laikina.med = pazymiai[pazymiai.size() / 2];
         }
@@ -68,6 +69,7 @@ int main() {
 
         grupe.push_back(laikina);
     }
+    //spausdinimas
     cout << "Pavarde\t\t" << "Vardas\t\t" << "Galutinis(Vid.)\t" << "Galutinis(Med.)" <<endl;
     cout << "------------------------------------------------------------------------\n";
     for (auto& tt : grupe)
