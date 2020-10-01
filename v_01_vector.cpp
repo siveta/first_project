@@ -16,8 +16,6 @@ struct studentas {
     string vardas;
     string pavarde;
     int egz;
-    //int paz[15];
-    //int paz;
     float med;
     float galutinis = 0;
 };
@@ -44,20 +42,20 @@ int main() {
         while (true) {
             cout << "Noredami baigti pazymiu ivedima parasykite '0'\n";
             cout << "Iveskite " << m + 1 << "-aji pazymi:\n";
-            cin >> paz;
+            cin >> paz;        
             if (paz != 0) {
                 pazymiai.reserve(m + 1);
                 // patikrina ar ivestas pazymys yra  10-baleje sistemoje
                 if (paz < 0 or paz > 10) {
                     cout << "Klaida! Iveskite pazymius dar karta:\n";
-                    continue;
-                }
+                    continue;                             
+                }               
                 else {
                     laikina.galutinis = laikina.galutinis + (float)paz;
                     pazymiai.push_back(paz);
                     m++;
                 }
-            }
+            }           
             else {
                 break;
             }
@@ -72,10 +70,11 @@ int main() {
     
     }
     //spausdinimas
-    cout << "Pavarde\t\t" << "Vardas\t\t" << "Galutinis(Vid.)\t" << "Galutinis(Med.)" << endl;
+    cout << "Vardas" << std::setw(25) << "Pavarde" << std::setw(20) << "Galutinis(Vid.)\t" << "Galutinis(Med.)" << endl;
     cout << "------------------------------------------------------------------------\n";
     for (auto& tt : grupe) {
-        cout << tt.vardas << "\t\t" << tt.pavarde << "\t\t" << std::fixed << std::setprecision(2) << tt.galutinis << "\t\t" << tt.med << endl;
-        //grupe.clear();
+        cout << std::fixed << std::setprecision(2) << std::setw(10) << tt.vardas << std::setw(20) << tt.pavarde  << std::setw(20) << tt.galutinis << "\t\t" << tt.med << endl;
+        
     }
+    grupe.clear();
 }
