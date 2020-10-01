@@ -8,4 +8,4 @@ Atlieka tas pačias funkcijas kaip ir versija su masyvais.
 Programoje taip pat nėra galima generuoti  studento pažymių atsitiktinai.
 
 ***Pastaba!***
-*Programoje nėra pakankamai klaidų tikrinimo, bet tai kitose versijose bandysiu sutvarkyti*
+*Programose nėra pakankamai klaidų tikrinimo, bet tai kitose versijose bandysiu sutvarkyti*
