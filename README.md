@@ -1,1 +1,1 @@
-# Objektinis programavimas
+# Objektinis programavimas C++
