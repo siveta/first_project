@@ -1,1 +1,1 @@
-# first_project
+# Objektinis programavimas
