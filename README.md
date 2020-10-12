@@ -1,5 +1,8 @@
 # Objektinis programavimas C++
 
-**Nuorodos į projekto dalis :**
-* [1 dalis](https://github.com/siveta/first_project/tree/v_01)
-* [2 dalis](https://github.com/siveta/first_project/tree/v_02)
+## v_03
+Padarytas versijos v_02 kodo reorganizavimas.
+Sukurti antraštiniai failai. 
+Dar nėra panaudotas išimčių valdymas.
+
+
