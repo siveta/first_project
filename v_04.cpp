@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "greicio_analize.h"
+
 using std::string;
 using std::cout;
 using std::cin;
@@ -187,7 +189,28 @@ int main() {
         else if (k.galutinis <= 5) {
             newFile2 << std::fixed << std::setprecision(2) << std::setw(15) << k.pavarde << std::setw(15) << k.vardas << std::setw(20) << k.galutinis << std::setw(20) << k.med << endl;
         }
+
     }
+    cout << "Failo 'sudentai1.txt' nuskaitymas :\n(failas is 1000 eiluciu)" << endl;
+    std::cout << "Iprastas variantas, eilutes:\n";
+    el_po_el("studentai1.txt", "studentai_copy.txt");
+
+    cout << "Failo 'sudentai2.txt' nuskaitymas :\n(failas is 10000 eiluciu)" << endl;
+    std::cout << "Iprastas variantas, eilutes:\n";
+    el_po_el("studentai2.txt", "studentai2_copy.txt");
+
+    cout << "Failo 'sudentai3.txt' nuskaitymas :\n(failas is 100000 eiluciu)" << endl;
+    std::cout << "Iprastas variantas, eilutes:\n";
+    el_po_el("studentai3.txt", "studentai3_copy.txt");
+
+    cout << "Failo 'sudentai4.txt' nuskaitymas :\n(failas is 1000000 eiluciu)" << endl;
+    std::cout << "Iprastas variantas, eilutes:\n";
+    el_po_el("studentai4.txt", "studentai4_copy.txt");
+
+    cout << "Failo 'sudentai5.txt' nuskaitymas :\n(failas is 10000000 eiluciu)" << endl;
+    std::cout << "Iprastas variantas, eilutes:\n";
+    el_po_el("studentai5.txt", "studentai5_copy.txt");
+
     grupe.clear();
 }
 
