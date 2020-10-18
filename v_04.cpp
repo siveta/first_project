@@ -1,29 +1,6 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <iomanip>
-#include <vector>
-#include <algorithm>
 
+#include "compare.h"
 #include "greicio_analize.h"
-
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
-using std::vector;
-
-struct studentas {
-    string vardas;
-    string pavarde;
-    vector <double> namuDarbai;
-    int egz;
-    float med = 0;
-    float galutinis = 0;
-};
-
-bool compare(studentas first, studentas second); // palyginimas pagal pavarde
-
 
 int main() {
     int paz;
@@ -212,16 +189,6 @@ int main() {
     el_po_el("studentai5.txt", "studentai5_copy.txt");
 
     grupe.clear();
-}
-
-bool compare(studentas first, studentas second) // palyginimas pagal pavarde
-{
-    if (first.pavarde != second.pavarde) {
-        return first.vardas < second.pavarde;
-    }
-    else {
-        return (first.vardas < second.vardas);
-    }
 }
      
         
