@@ -66,7 +66,7 @@ int main() {
                     // patikrina ar ivestas pazymys yra 10-baleje sistemoje
                     if (paz < 0 or paz > 10) {
                         cout << "Klaida! Iveskite pazymius dar karta:\n";
-                        j = j - 1;
+                        j = j - 1; 
                     }
                     else {
                         file << paz << "\t";
@@ -119,8 +119,17 @@ int main() {
         int nd = 0;
         grupe.reserve(1);
         pirmaEil.reserve(1);
-        myFile.open("Studentai10000.txt");
 
+        string file;
+        cout << "Irasykite failo pavadinima :\n";
+        cin >> file;
+        myFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+        try {
+            myFile.open(file);
+        }
+        catch (std::ifstream::failure e) {
+            std::cerr << "Negalima atidaryti failo arba failas neegzistuoja!\n";
+        }
         if (myFile.is_open())
         {
             myFile >> vardai >> pavardes >> pazymiai;
@@ -148,38 +157,36 @@ int main() {
                 grupe.push_back(laik);
             }
             myFile.close();
-        }
-        else {
-            cout << "Negalima atidaryti failo!";
-        }
 
-        sort(grupe.begin(), grupe.end(), compare);
 
-        // vidurkis
-        for (auto& k : grupe) {
-            double vid = 0;
-            double suma = 0;
-            for (auto& a : k.namuDarbai) {
-                suma = suma + a;
+            sort(grupe.begin(), grupe.end(), compare);
+
+            // vidurkis
+            for (auto& k : grupe) {
+                double vid = 0;
+                double suma = 0;
+                for (auto& a : k.namuDarbai) {
+                    suma = suma + a;
+                }
+                vid = suma / nd;
+                k.galutinis = 0.6 * k.egz + 0.4 * vid;
             }
-            vid = suma / nd;
-            k.galutinis = 0.6 * k.egz + 0.4 * vid;
-        }
 
-        // mediana
-        double mediana;
-        for (auto& k : grupe) {
-            std::sort(k.namuDarbai.begin(), k.namuDarbai.end());
-            mediana = nd % 2 == 0 ?
-                (k.namuDarbai.at(nd / 2 - 1) + k.namuDarbai.at(nd / 2)) / 2 : k.namuDarbai.at((nd / 2) + 0.5);
-            k.med = 0.6 * k.egz + 0.4 * mediana;
+            // mediana
+            double mediana;
+            for (auto& k : grupe) {
+                std::sort(k.namuDarbai.begin(), k.namuDarbai.end());
+                mediana = nd % 2 == 0 ?
+                    (k.namuDarbai.at(nd / 2 - 1) + k.namuDarbai.at(nd / 2)) / 2 : k.namuDarbai.at((nd / 2) + 0.5);
+                k.med = 0.6 * k.egz + 0.4 * mediana;
+            }
+            // rezultatai
+            cout << std::setw(15) << "Pavarde" << std::setw(15) << "Vardas" << std::setw(20) << "Galutinis(Vid.)" << std::setw(20) << "Galutinis(Med.)" << endl;
+            cout << "----------------------------------------------------------------------------------------------\n";
+            for (auto& k : grupe) {
+                cout << std::fixed << std::setprecision(2) << std::setw(15) << k.pavarde << std::setw(15) << k.vardas << std::setw(20) << k.galutinis << std::setw(20) << k.med << endl;
+            }
+            grupe.clear();
         }
-        // rezultatai
-        cout << std::setw(15) << "Pavarde" << std::setw(15) << "Vardas" << std::setw(20) << "Galutinis(Vid.)" << std::setw(20) << "Galutinis(Med.)" << endl;
-        cout << "----------------------------------------------------------------------------------------------\n";
-        for (auto& k : grupe) {
-            cout << std::fixed << std::setprecision(2) << std::setw(15) << k.pavarde << std::setw(15) << k.vardas << std::setw(20) << k.galutinis << std::setw(20) << k.med << endl;
-        }
-        grupe.clear();
     }
 }
