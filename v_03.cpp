@@ -109,17 +109,14 @@ int main() {
     else if (choice == 2) {
 
         std::ifstream myFile;
-        string line;
         string vardai;
         string pavardes;
         string pazymiai;
         string egzaminas;
-        string name;
         vector <string> pirmaEil;
         int nd = 0;
         grupe.reserve(1);
         pirmaEil.reserve(1);
-
         string file;
         cout << "Irasykite failo pavadinima :\n";
         cin >> file;
