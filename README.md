@@ -3,6 +3,6 @@
 ## v_03
 Padarytas versijos v_02 kodo reorganizavimas.
 Sukurti antraštiniai failai. 
-Dar nėra panaudotas išimčių valdymas.
+Išimčių valdymas pritaikytas antroje užduoties dalyje, jis patikrina ar failas egzistuoja, jei ne - parašo atitinkamą pranešimą.
 
 
