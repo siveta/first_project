@@ -12,9 +12,10 @@ Kažkodėl su didžiausiu duomenų failu neatlieka paskutinės funkcijos-greiči
 * 8 GB RAM 
 
 ## spartos analizės rezultatas
+**x86**
 ![x86](https://github.com/siveta/first_project/blob/v_05/v_05.png)
 
-
+**x64**
 ![x64](https://github.com/siveta/first_project/blob/v_05/v__05.png)
 
 
