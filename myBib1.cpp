@@ -84,19 +84,16 @@ void operacijos(string fileName, int pazKiekis, int studKiekis, string p) {
         
         start = std::chrono::high_resolution_clock::now();
         std::sort(grupe.begin(), grupe.end(), compare);
-        vector <studentas> moksliukai;
-        moksliukai.reserve(studKiekis * 0.65);
         vector <studentas> dvejetukininkai;
-        moksliukai.reserve(studKiekis * 0.65);
+        dvejetukininkai.reserve(studKiekis * 0.65);
 
-        for (auto& k : grupe) {
-            if (k.galutinis > 5) {
-                moksliukai.push_back(k);
-            }
-            else if (k.galutinis <= 5) {
-                dvejetukininkai.push_back(k);
-            }
+        studentas paskutinis = grupe.back();
+        while (paskutinis.galutinis < 5) {
+            dvejetukininkai.push_back(paskutinis);
+            grupe.pop_back();
+            paskutinis = grupe.back();
         }
+        
         end = std::chrono::high_resolution_clock::now();
         diff = end - start; // Skirtumas (s)
         cout << "Studentu skirstymas i dvi grupes uztruko: " << diff.count() << " s\n";
@@ -111,7 +108,7 @@ void operacijos(string fileName, int pazKiekis, int studKiekis, string p) {
         newFile1 << "----------------------------------------------------------------------------------------------\n";
         newFile2 << std::setw(15) << "Pavarde" << std::setw(15) << "Vardas" << std::setw(20) << "Galutinis(Vid.)" << std::setw(20) << "Galutinis(Med.)" << endl;
         newFile2 << "----------------------------------------------------------------------------------------------\n";
-        for (auto& k : moksliukai) {
+        for (auto& k : grupe) {
             newFile1 << std::fixed << std::setprecision(2) << std::setw(15) << k.pavarde << std::setw(15) << k.vardas << std::setw(20) << k.galutinis << std::setw(20) << k.med << endl;
         }
         for (auto& k : dvejetukininkai) {
@@ -121,4 +118,5 @@ void operacijos(string fileName, int pazKiekis, int studKiekis, string p) {
         diff = end - start; // Skirtumas (s)
         cout << studKiekis << " studentu duomenu surasymas i 2 failus uztruko :  " << diff.count() << " s\n";
         grupe.clear();
+        dvejetukininkai.clear();
 }
