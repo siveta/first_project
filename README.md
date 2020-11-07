@@ -11,8 +11,10 @@ Kažkodėl su didžiausiu duomenų failu neatlieka paskutinės funkcijos-greiči
 * Intel Core i5-8250U
 * 8 GB RAM 
 
-## spartos analizės rezultatas (v_04_papildymas)
+## spartos analizės rezultatas
 ![x86](https://github.com/siveta/first_project/blob/v_05/v_05.png)
+
+
 ![x64](https://github.com/siveta/first_project/blob/v_05/v__05.png)
 
 
