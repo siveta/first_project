@@ -11,11 +11,11 @@ Kažkodėl su didžiausiu duomenų failu neatlieka paskutinės funkcijos-greiči
 * Intel Core i5-8250U
 * 8 GB RAM 
 
+## Rasta problema !
+Pasirodo, per savo žioplumą buvau parašiusi, kad funkcija 'greicio_analize_vector' visur atlikinėtų darbą tik su vienu failu, t.y. failu iš 1000 studentų.
+
 ## spartos analizės rezultatas
 **x86**
-![x86](https://github.com/siveta/first_project/blob/v_05/v_05.png)
 
-**x64**
-![x64](https://github.com/siveta/first_project/blob/v_05/v__05.png)
 
 
