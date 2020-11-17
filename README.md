@@ -14,6 +14,11 @@ Kažkodėl su didžiausiu duomenų failu neatlieka paskutinės funkcijos-greiči
 ## Rasta problema !
 Pasirodo, per savo žioplumą buvau parašiusi, kad funkcija 'greicio_analize_vector' visur atlikinėtų darbą tik su vienu failu, t.y. failu iš 1000 studentų.
 
+## Apie :
+Sugeneruojami failai, kuriuose kiekvienas studentas atsitiktinai gauna **4** pažymius ir egzamino pažymį, viso - 5.
+Vardai ir pavardės generuojami paprastai, tiesiog Vardas(Pavardė) +  atitinkamas skaičius.
+Rūšiavimas į dvi kategorijas įgyvendintas pasirodžiusiu efektyviausiu metodu (na bent jau atminties prasme) - kai sukuriamas vienas papildomas sąrašas (vektorius), iš bendro surūšiuoto sąrašo (vektoriaus) nuskaitinėjamos reikšmės ir pridedamos į naują sąrašą (vektorių) bei ištrinamos iš bendro sąrašo (vektoriaus), kol tenkina sąlygą.
+
 ## spartos analizės rezultatas
 **x86**
 
