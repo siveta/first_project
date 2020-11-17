@@ -12,7 +12,7 @@ Kažkodėl su didžiausiu duomenų failu neatlieka paskutinės funkcijos-greiči
 * 8 GB RAM 
 
 ## Rasta problema !
-Pasirodo, per savo žioplumą buvau parašiusi, kad funkcija 'greicio_analize_vector' visur atlikinėtų darbą tik su vienu failu, t.y. failu iš 1000 studentų.
+Pasirodo, per savo žioplumą buvau parašiusi, kad funkcija 'greicio_analize_vector' visur atlikinėtų darbą tik su vienu tuo pačiu failu, t.y. failu iš 1000 studentų.
 
 ## Apie :
 Sugeneruojami failai, kuriuose kiekvienas studentas atsitiktinai gauna **4** pažymius ir egzamino pažymį, viso - 5.
