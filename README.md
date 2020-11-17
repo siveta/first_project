@@ -17,5 +17,6 @@ Pasirodo, per savo žioplumą buvau parašiusi, kad funkcija 'greicio_analize_ve
 ## spartos analizės rezultatas
 **x86**
 
+![](https://github.com/siveta/first_project/blob/v_05/speedTest.png)
 
 
