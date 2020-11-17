@@ -6,4 +6,4 @@
 * [3 dalis](https://github.com/siveta/first_project/tree/v_03)
 * [4 dalis](https://github.com/siveta/first_project/tree/v_04)
 * [5 dalis](https://github.com/siveta/first_project/tree/v_05)
-
+* [6 dalis](https://github.com/siveta/first_project/tree/v_05)
