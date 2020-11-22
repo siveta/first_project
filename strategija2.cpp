@@ -58,7 +58,6 @@ void greicio_analize2_List(string read_vardas, int m) {
     dvejetukininkai.clear();
 }
 
-
 void greicio_analize2_Vector(string read_vardas, int m, int studKiekis) {
     vector <studentas2> grupe;
     grupe.reserve(studKiekis + 5);

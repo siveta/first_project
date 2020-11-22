@@ -71,7 +71,6 @@ void greicio_analize_List(string read_vardas, int m) {
             dvejetukininkai.push_back(k);
         }
     }
-
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start; // Skirtumas (s)
     cout << "Studentu skirstymas i dvi grupes uztruko: " << std::fixed << std::setprecision(6) << diff.count() << " s\n";
@@ -85,15 +84,8 @@ void greicio_analize_Vector(string read_vardas, int m, int studKiekis) {
     grupe.reserve(studKiekis + 5);
     cout << "Greicio analize naudojant 'Vector' :" << endl;
     std::ifstream myFile;
-   // myFile.open(read_vardas);
+    myFile.open(read_vardas);
     int paz = 0;
-    try {
-        myFile.open(read_vardas);
-    }
-    catch (std::ifstream::failure e) {
-        std::cout << "Negalima atidaryti failo arba failas neegzistuoja!\n";
-    }
-    cout << "failas atidarytas" << endl;
     while (myFile) {
         if (!myFile.eof()) {
             studentas laik;
@@ -132,7 +124,6 @@ void greicio_analize_Vector(string read_vardas, int m, int studKiekis) {
             dvejetukininkai.push_back(k);
         }
     }
-
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start; // Skirtumas (s)
     cout << "Studentu skirstymas i dvi grupes uztruko: " << std::fixed << std::setprecision(6) << diff.count() << " s\n";
