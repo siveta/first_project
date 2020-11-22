@@ -16,4 +16,4 @@
 ## spartos analizės rezultatas
 **x86**
 
-![](https://github.com/siveta/first_project/blob/v_1.0/v1.png)
+![](https://github.com/siveta/first_project/blob/v_1.0/v_1.png)
